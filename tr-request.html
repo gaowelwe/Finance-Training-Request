@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Request Form</title>
+    <meta name="description" content="Employee training request form">
+    <link href="tr-styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>Training Request Form</h1>
+            <p>Submit your training request for approval</p>
+        </header>
+
+        <div class="step-indicator" id="stepIndicator"></div>
+
+        <div class="card">
+
+            <form id="trainingForm">
+
+                <div class="form-step active" data-step="1">
+
+                    <h2 class="section-title">Step 1: Employee Details</h2>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="fullName">
+                                Full Name <span class="required">*</span>
+                            </label>
+
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employeeNumber">
+                                Employee Number <span class="required">*</span>
+                            </label>
+
+                            <input type="text" id="employeeNumber" name="employeeNumber" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="jobTitle">
+                                Job Title <span class="required">*</span>
+                            </label>
+
+                            <input type="text" id="jobTitle" name="jobTitle" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">
+                                Department <span class="required">*</span>
+                            </label>
+
+                            <select id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option value="HR">Human Resources</option>
+                                <option value="IT">Information Technology</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Operations">Operations</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="emailAddress">
+                                Email Address <span class="required">*</span>
+                            </label>
+
+                            <input type="email" id="emailAddress" name="emailAddress" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobileNumber">
+                                Mobile Number <span class="required">*</span>
+                            </label>
+
+                            <input type="tel" id="mobileNumber" name="mobileNumber" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Start Date <span class="required">*</span></label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date <span class="required">*</span></label>
+                            <input type="date" id="endDate" name="endDate" required>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-step" data-step="2">
+
+                    <h2 class="section-title">Step 2: Training Details</h2>
+
+                    <div class="form-group">
+
+                        <label for="trainingTitle">
+                            Training Title <span class="required">*</span>
+                        </label>
+
+                        <input type="text" id="trainingTitle" name="trainingTitle" required>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="serviceProvider">
+                                Service Provider <span class="required">*</span>
+                            </label>
+
+                            <input type="text" id="serviceProvider" name="serviceProvider" required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="trainingType">
+                                Training Type <span class="required">*</span>
+                            </label>
+
+                            <select id="trainingType" name="trainingType" required>
+
+                                <option value="">Select Type</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Short Course">Short Course</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Conference">Conference</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            
+                <div class="form-step" data-step="3">
+                    <h2 class="section-title">Step 3: Motivation & Impact</h2>
+                    <div class="form-group">
+                        <label for="reasonForTraining">
+                            Reason for Training <span class="required">*</span>
+                        </label>
+
+                        <textarea id="reasonForTraining" name="reasonForTraining" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group"> <label for="expectedImprovement">
+                            Expected Improvement <span class="required">*</span>
+                        </label>
+                        <textarea id="expectedImprovement" name="expectedImprovement" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group"> <label class="checkbox-label"> <input id="commitment" type="checkbox"
+                                name="commitment" required> I commit to attend and share learnings <span
+                                class="required">*</span> </label> </div>
+                    <h3>Cost Breakdown</h3>
+                    <div class="form-row">
+                        <div class="form-group"> <label for="courseFee">
+                                Course Fee
+                            </label> <input id="courseFee" type="number" name="courseFee" step="0.01" min="0"> </div>
+                        <div class="form-group"> <label for="travelExpenses">
+                                Travel Expenses
+                            </label> <input id="travelExpenses" type="number" name="travelExpenses" step="0.01" min="0">
+                        </div>
+                    </div>
+
+                </div> 
+
+                <div class="form-step" data-step="4">
+                    <h2 class="section-title">Step 4: Review & Submit</h2>
+                    <div id="reviewSummary" class="review-summary"></div>
+                </div>
+                <div class="form-actions">
+
+                    <button type="button" class="btn btn-secondary" id="prevBtn">
+                        Previous
+                    </button>
+
+                    <button type="button" class="btn btn-primary" id="nextBtn">
+                        Next
+                    </button>
+
+                    <button type="submit" class="btn btn-success" id="submitBtn">
+                        Submit Request
+                    </button>
+
+                </div>
+
+            </form>
+        </div>
+
+        <div id="successMessage" class="success-message">
+
+            <div class="success-content">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>Request Submitted Successfully!</h2>
+
+                <p>
+                    Tracking Number:
+                    <strong id="trackingNumber"></strong>
+                </p>
+
+                <button type="button" class="btn btn-primary" id="submitAnotherBtn">
+                    Submit Another
+                </button>
+                <button type="button" class="btn btn-secondary" id="doneBtn">Done</button>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="tr-script.js"></script>
+</body>
+
+</html>
